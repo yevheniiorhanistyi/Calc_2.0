@@ -1,38 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 import { ThemeProvider } from '@mui/material/styles';
 
 import App from './App';
-import Authentication from './pages/Authentication/Authentication';
-import Database from './pages/Database/Database';
-import Functions from './pages/Functions/Functions';
-import Hosting from './pages/Hosting/Hosting';
-import MachineLearning from './pages/MachineLearning/MachineLearning';
-import Storage from './pages/Storage/Storage';
-import { dashboardTheme } from './dashboardTheme';
 
+import { dashboardTheme } from './dashboardTheme';
 import './index.css';
 
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find the root element');
+const root = ReactDOM.createRoot(rootElement);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <ThemeProvider theme={dashboardTheme}>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<App/>}>
-          <Route path='authentication' element={<Authentication/>}/>
-          <Route path='database' element={<Database/>}/>
-          <Route path='functions' element={<Functions/>}/>
-          <Route path='hosting' element={<Hosting/>}/>
-          <Route path='machine-learning' element={<MachineLearning/>}/>
-          <Route path='storage' element={<Storage/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <App />
   </ThemeProvider>
 );

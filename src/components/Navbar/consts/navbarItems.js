@@ -8,37 +8,37 @@ import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputCompone
 export const mainNavbarItems = [
     {
         id: 0,
-        icon: <PeopleIcon/>,
-        label: 'Authentication',
-        route: 'authentication'
+        icon: <PeopleIcon />,
+        label: 'Kalkulator porcji',
+        route: 'calc'
     },
     {
         id: 1,
-        icon: <StorageIcon/>,
+        icon: <StorageIcon />,
         label: 'Database',
         route: 'database'
     },
     {
         id: 2,
-        icon: <FolderOpenIcon/>,
+        icon: <FolderOpenIcon />,
         label: 'Storage',
         route: 'storage'
     },
     {
         id: 3,
-        icon: <PublicIcon/>,
+        icon: <PublicIcon />,
         label: 'Hosting',
         route: 'hosting'
     },
     {
         id: 4,
-        icon: <CodeIcon/>,
+        icon: <CodeIcon />,
         label: 'Functions',
         route: 'functions'
     },
     {
         id: 5,
-        icon: <SettingsInputComponentIcon/>,
+        icon: <SettingsInputComponentIcon />,
         label: 'Machine learning',
         route: 'machine-learning'
     },
