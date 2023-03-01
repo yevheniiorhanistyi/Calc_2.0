@@ -1,7 +1,7 @@
-import CommonButton from '../common/CommonButton/CommonButton';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
+import MailIcon from '@mui/icons-material/Mail';
 import HelpIcon from '@mui/icons-material/Help';
 import Box from '@mui/material/Box';
 
@@ -12,7 +12,7 @@ const Header = ({ title }) => {
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: '#009be5',
-            padding: '20px',
+            padding: '20px 80px',
         },
         topRow: {
             display: 'flex',
@@ -29,7 +29,6 @@ const Header = ({ title }) => {
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginLeft: '20px',
         },
         link: {
             fontWeight: 500,
@@ -55,18 +54,20 @@ const Header = ({ title }) => {
                     {title}
                 </Typography>
                 <Box>
-                    <CommonButton
-                        sx={headerStyles.webButton}
-                        variant="outlined"
+                    <Tooltip
+                        title="Send"
                     >
-                        Web
-                    </CommonButton>
+                        <IconButton
+                            color="white"
+                        >
+                            <MailIcon />
+                        </IconButton>
+                    </Tooltip>
                     <Tooltip
                         title="Help"
                     >
                         <IconButton
                             color="white"
-                            sx={headerStyles.helpIcon}
                         >
                             <HelpIcon />
                         </IconButton>

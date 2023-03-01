@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 
 const BasicCard = ({header, content}) => {
     return(
-        <Card>
+        <Card sx={{marginBottom: '20px'}}>
             {header}
             <CardContent>
                 {content}

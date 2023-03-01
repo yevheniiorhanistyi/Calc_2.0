@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
 import SearchBar from '../../components/common/SearchBar/SearchBar';
+import { TextField } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
 import IconButton from '@mui/material/IconButton';
@@ -46,10 +47,16 @@ const Main = () => {
 
         return (
             <Box sx={cardHeaderStyles.wrapper}>
-                <SearchBar 
-                    placeholder="Search by email address, phone number, or user UID"
-                    onChange={(event) => handleSearch(event.target.value)}
-                    searchBarWidth='720px'
+                
+                <TextField
+                    name='receptura'
+                    label='Receptura %'
+                    variant="outlined"
+                />
+                <TextField
+                    name='material'
+                    label='Ilość surowca'
+                    variant="outlined"
                 />
                 <Box>
                     <CommonButton 
