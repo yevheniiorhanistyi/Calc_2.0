@@ -53,11 +53,10 @@ export const dashboardTheme = createTheme({
         ].join(','),
         
         h1: {
-          fontSize: '1.6rem',
+          fontSize: '1.4rem',
           fontWeight: 600,
           color: '#fff',
           letterSpacing: '0.5px',
-          textTransform: 'capitalize',
        },
       },
   });

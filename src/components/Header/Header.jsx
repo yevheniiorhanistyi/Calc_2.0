@@ -29,7 +29,6 @@ const Header = ({ title }) => {
             flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginBottom: '20px',
             marginLeft: '20px',
         },
         link: {
@@ -49,6 +48,7 @@ const Header = ({ title }) => {
         <Box sx={headerStyles.wrapper}>
             <Box sx={headerStyles.middleRow}>
                 <Typography
+                    sx={headerStyles.title}
                     variant="h1"
                     color="white"
                 >
@@ -59,7 +59,7 @@ const Header = ({ title }) => {
                         sx={headerStyles.webButton}
                         variant="outlined"
                     >
-                        Web setup
+                        Web
                     </CommonButton>
                     <Tooltip
                         title="Help"

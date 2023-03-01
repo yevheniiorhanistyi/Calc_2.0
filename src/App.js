@@ -1,6 +1,6 @@
 import Grid from '@mui/material/Grid';
 
-import Portins from './pages/Portions'
+import Main from './pages/Main'
 import Header from './components/Header/Header';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
   return (
     <Grid container>
       <Header title={title} />
-      <Portins />
+      <Main />
     </Grid>
   );
 }

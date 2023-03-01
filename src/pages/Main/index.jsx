@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import NewUserModal from '../../components/Modals/NewUserModal/NewUserModal';
 import { cardHeaderStyles } from './styles';
 
-const Authentication = () => {
+const Main = () => {
     const [open, setOpen] = useState(false);
     const [users, setUsers] = useState([]);
     const [searchResults, setSearchResults] = useState(users);
@@ -107,4 +107,4 @@ const Authentication = () => {
     )
 };
 
-export default Authentication;
+export default Main;
