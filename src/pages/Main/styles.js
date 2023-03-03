@@ -9,7 +9,17 @@ export const cardHeaderStyles = {
         backgroundColor: '#f5f5f5',
         borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
     },
+    textFieldGroupe: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        width: '45%'
+    },
+    inputAdornment: {
+        marginLeft: '10px'
+    },
     addUserButton: {
-        fontSize: '1.05rem',
+        fontSize: '1rem',
+        marginRight: '10px'
     },
 };

@@ -1,73 +1,77 @@
 import React, { useState } from 'react';
 import GridWrapper from '../../components/common/GridWrapper/GridWrapper';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
-import SearchBar from '../../components/common/SearchBar/SearchBar';
-import { TextField } from '@mui/material';
+import MenuItem from '@mui/material/MenuItem';
+import { TextField, Typography } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import NewUserModal from '../../components/Modals/NewUserModal/NewUserModal';
+import InputAdornment from '@mui/material/InputAdornment';
 import { cardHeaderStyles } from './styles';
 
 const Main = () => {
     const [open, setOpen] = useState(false);
-    const [users, setUsers] = useState([]);
-    const [searchResults, setSearchResults] = useState(users);
+    const [grammature, setGrammature] = useState(400);
 
     const getHeader = () => {
-
-        const handleSearch = (value) => {
-            filterData(value);
-        };
-
-        const filterData = (value) => {
-            const lowercasedValue = value.toLowerCase().trim();
-
-            if(lowercasedValue === '') setUsers(searchResults);
-            else {
-                const filteredData = searchResults.filter((item) => {
-                    return Object.keys(item).some((key) => 
-                        item[key].toString().toLowerCase().includes(lowercasedValue)
-                    );
-                });
-                setUsers(filteredData);
-            };
-        };
 
         const addUser = () => {
             setOpen(true)
         };
 
-        const refreshUsers = () => {
-            setUsers([]);
-            setSearchResults([]);
-        };
+        const handleChange = (event) => {
+            setGrammature(event.target.value);
+          };
 
         return (
             <Box sx={cardHeaderStyles.wrapper}>
-                
-                <TextField
-                    name='receptura'
-                    label='Receptura %'
-                    variant="outlined"
-                />
-                <TextField
-                    name='material'
-                    label='Ilość surowca'
-                    variant="outlined"
-                />
+                <Box sx={cardHeaderStyles.textFieldGroupe}>
+                    <TextField
+                        name='receptura'
+                        label='Receptura'
+                        type="number"
+                        size='small'
+                        variant="outlined"
+                        InputProps={{
+                            endAdornment: <InputAdornment sx={cardHeaderStyles.inputAdornment} position="start">%</InputAdornment>,
+                          }}
+                    />
+                    <TextField
+                        name='material'
+                        label='Ilość surowca'
+                        type="number"
+                        size='small'
+                        variant="outlined"
+                        InputProps={{
+                            endAdornment: <InputAdornment sx={cardHeaderStyles.inputAdornment} position="start">kg</InputAdornment>,
+                          }}
+                    />
+                    <TextField
+                        value={grammature}
+                        sx={{minWidth: '105px'}}
+                        size='small'
+                        select
+                        label="Grammatura"
+                        onChange={handleChange}
+                        >
+                        <MenuItem value={400}>400</MenuItem>
+                        <MenuItem value={700}>700</MenuItem>
+                        <MenuItem value={800}>800</MenuItem>
+                        <MenuItem value={900}>900</MenuItem>
+                    </TextField>
+                </Box>
                 <Box>
                     <CommonButton 
                         onClick={addUser}
                         variant="contained"
-                        size="large"
+                        size="medium"
                         sx={cardHeaderStyles.addUserButton}
                     >
-                        Add user
+                        Oblicz
                     </CommonButton>
-                    <IconButton onClick={refreshUsers}>
+                    <IconButton>
                         <RefreshIcon />
                     </IconButton>
                 </Box>
@@ -76,33 +80,19 @@ const Main = () => {
         
     }
 
-    const addNewUser = (data) => {
-        users.push({ ...data });
+    const getContent = () => (
+        <Typography 
+            align="center"
+            sx={{ margin: '40px 16px', color: 'rgba(0, 0, 0, 0.6)', fontSize: '1.3rem'}}
+        >
+                    No portions for this project yet
+        </Typography>
+    );
+
+    const addNewUser = () => {
         setOpen(false);
     };
     
-    const getContent = () => (
-        <>
-            {
-                users.length ? 
-                    users.map((user) => (
-                        <Box sx={{ marginBottom: '20px' }}>
-                            <Typography>User ID: {user.userId}</Typography>
-                            <Typography>Email: {user.email}</Typography>
-                            <Typography>Phone Number: {user.phoneNumber}</Typography>
-                        </Box>
-                    )) :
-            
-                <Typography 
-                    align="center"
-                    sx={{ margin: '40px 16px', color: 'rgba(0, 0, 0, 0.6)', fontSize: '1.3rem'}}
-                >
-                    No users for this project yet
-                </Typography>
-            }
-        </>
-    );
-
     return (
         <GridWrapper>
             <BasicCard
