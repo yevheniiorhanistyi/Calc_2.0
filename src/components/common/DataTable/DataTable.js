@@ -3,7 +3,8 @@ import { DataGrid } from '@mui/x-data-grid';
 const DataTable = ({rows, columns, loading, sx}) => {
   
     return(
-        <DataGrid 
+        <DataGrid
+            sx={sx}
             rows={rows}
             columns={columns}
             loading={loading}
