@@ -5,12 +5,14 @@ import { TextField, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
+import BasicSlider from '../../components/common/BasicSlider';
 import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import { cardHeaderStyles } from './styles';
 
 const CalcCard = () => {
     const [grammature, setGrammature] = useState(400);
+    const marks = [{value: 270,},{value: 300,},{value: 340,},{value: 380,},{ value: 410,},{value: 450,},];
 
     const getHeader = () => {
 
@@ -22,6 +24,7 @@ const CalcCard = () => {
             <Box sx={cardHeaderStyles.wrapper}>
                 <Box sx={cardHeaderStyles.textFieldGroupe}>
                     <TextField
+                        sx={cardHeaderStyles.textField}
                         name='receptura'
                         label='Receptura'
                         type="number"
@@ -32,6 +35,7 @@ const CalcCard = () => {
                           }}
                     />
                     <TextField
+                        sx={cardHeaderStyles.textField}
                         name='material'
                         label='Ilość surowca'
                         type="number"
@@ -42,8 +46,8 @@ const CalcCard = () => {
                           }}
                     />
                     <TextField
+                        sx={cardHeaderStyles.textFieldSelect}
                         value={grammature}
-                        sx={{minWidth: '105px'}}
                         size='small'
                         select
                         label="Grammatura"
@@ -54,6 +58,7 @@ const CalcCard = () => {
                         <MenuItem value={800}>800</MenuItem>
                         <MenuItem value={900}>900</MenuItem>
                     </TextField>
+                    <BasicSlider min={270} max={450} step={10} defaultValue={410} marks={marks}/>
                 </Box>
                 <Box>
                     <CommonButton 

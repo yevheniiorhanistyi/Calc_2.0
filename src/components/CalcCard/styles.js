@@ -5,7 +5,7 @@ export const cardHeaderStyles = {
         justifyContent: 'space-between',
         paddingLeft: '20px',
         paddingRight: '20px',
-        height: '65px',
+        height: '70px',
         backgroundColor: '#f5f5f5',
         borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
     },
@@ -13,7 +13,14 @@ export const cardHeaderStyles = {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        width: '45%'
+        width: '65%'
+    },
+    textField: {
+        maxWidth: '200px'
+    },
+    textFieldSelect: {
+        minWidth: '105px',
+        maxWidth: '200px'
     },
     inputAdornment: {
         marginLeft: '10px'
