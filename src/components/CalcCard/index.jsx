@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
 import MenuItem from '@mui/material/MenuItem';
-import { TextField, Typography } from '@mui/material';
+import { TextField } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
 import BasicSlider from '../../components/common/BasicSlider';
+import CalcTable from '../CalcTable';
 import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
 import { cardHeaderStyles } from './styles';
@@ -78,12 +79,13 @@ const CalcCard = () => {
     }
 
     const getContent = () => (
-        <Typography 
-            align="center"
-            sx={{ margin: '40px 16px', color: 'rgba(0, 0, 0, 0.6)', fontSize: '1.3rem'}}
-        >
-                    No portions for this project yet
-        </Typography>
+        // <Typography 
+        //     align="center"
+        //     sx={{ margin: '40px 16px', color: 'rgba(0, 0, 0, 0.6)', fontSize: '1.3rem'}}
+        // >
+        //             No portions for this project yet
+        // </Typography>
+        <CalcTable/>
     );
 
     return(
