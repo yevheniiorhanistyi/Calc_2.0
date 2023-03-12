@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import PortionList from '../PortionsList/PortionsList';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -49,7 +50,8 @@ const CalcTable = () => {
               <StyledTableCell align="right">{`${row.weight} g`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.allPortions} szt`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.basicPortions} szt`}</StyledTableCell>
-              <StyledTableCell align="right">{`${row.generatedPortions} szt`}</StyledTableCell>
+              {/* <StyledTableCell align="right">{`${row.generatedPortions} szt`}</StyledTableCell> */}
+              <StyledTableCell align="right">{<PortionList generatedPortions={row.generatedPortions}/>}</StyledTableCell>
               <StyledTableCell align="right">{`${row.cansAmount} szt`}</StyledTableCell>
             </TableRow>
         </TableBody>
