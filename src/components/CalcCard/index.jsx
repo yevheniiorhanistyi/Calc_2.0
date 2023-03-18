@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BasicCard from '../../components/common/BasicCard/BasicCard';
 import MenuItem from '@mui/material/MenuItem';
-import { TextField } from '@mui/material';
+import { TextField, Typography } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import CommonButton from '../../components/common/CommonButton/CommonButton';
@@ -94,7 +94,10 @@ const CalcCard = () => {
         // >
         //             No portions for this project yet
         // </Typography>
-        <CalcTable/>
+        <Box>
+            <CalcTable/>
+        </Box>
+       
     );
 
     return(
