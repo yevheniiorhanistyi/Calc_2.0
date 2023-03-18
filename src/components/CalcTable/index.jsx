@@ -50,8 +50,7 @@ const CalcTable = () => {
               <StyledTableCell align="right">{`${row.weight} g`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.allPortions} szt`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.basicPortions} szt`}</StyledTableCell>
-              {/* <StyledTableCell align="right">{`${row.generatedPortions} szt`}</StyledTableCell> */}
-              <StyledTableCell align="right">{<PortionList generatedPortions={row.generatedPortions}/>}</StyledTableCell>
+              <StyledTableCell align="right">{`${row.generatedPortions} szt`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.cansAmount} szt`}</StyledTableCell>
             </TableRow>
         </TableBody>

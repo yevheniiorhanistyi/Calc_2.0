@@ -12,16 +12,19 @@ export const cardHeaderStyles = {
     textFieldGroupe: {
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'start',
         width: '65%'
     },
     textField: {
-        maxWidth: '200px'
+        maxWidth: '200px',
+        marginRight: '15px'
     },
     textFieldSelect: {
         minWidth: '105px',
-        maxWidth: '200px'
+        maxWidth: '200px',
+        marginRight: '15px'
     },
+    
     inputAdornment: {
         marginLeft: '10px'
     },
