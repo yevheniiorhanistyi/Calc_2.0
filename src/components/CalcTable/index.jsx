@@ -27,7 +27,7 @@ const row = createData(23, 456, 400, 5, 4, 1, 4955);
 
 const CalcTable = () => {
   return (
-    <TableContainer sx={{borderRadius: '4px 4px 0 0',}} component={Paper}>
+    <TableContainer sx={{borderRadius: '4px 4px 0 0'}} component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -52,21 +52,8 @@ const CalcTable = () => {
               <StyledTableCell align="right">{`${row.generatedPortions} szt`}</StyledTableCell>
               <StyledTableCell align="right">{`${row.cansAmount} szt`}</StyledTableCell>
             </TableRow>
-            <TableRow>
-              <StyledTableCell align="center">Komentarz</StyledTableCell>
-            </TableRow>
         </TableBody>
       </Table>
-      <textarea 
-            style={{
-                fontFamily: 'inherit',
-                color: 'rgba(0, 0, 0, 0.87)',
-                width: '100%', 
-                minHeight: '111px', 
-                maxHeight: '111px',
-                padding: '16px',
-                border: 0,
-              }} />
     </TableContainer>
   );
 }
