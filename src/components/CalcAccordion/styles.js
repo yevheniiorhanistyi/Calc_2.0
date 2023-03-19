@@ -13,10 +13,6 @@ export const CalcAccordionStyles = {
         border: '1px solid #cccccc',
         backgroundColor: '#feffce',
         boxShadow: 'inset 0 1px 1px rgb(0 0 0 / 8%)',
-        '&:focus-visible': {
-            outline: 0,
-            boxShadow: 'inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%)'
-        }
-        
+        transition: 'box-shadow .2s linear',
     }
 };

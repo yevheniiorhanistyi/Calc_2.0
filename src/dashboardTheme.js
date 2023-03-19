@@ -53,7 +53,7 @@ export const dashboardTheme = createTheme({
         ].join(','),
         
         h1: {
-          fontSize: '1.4rem',
+          fontSize: '1.3rem',
           fontWeight: 600,
           color: '#fff',
           letterSpacing: '0.5px',

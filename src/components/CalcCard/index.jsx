@@ -8,7 +8,7 @@ import CommonButton from '../../components/common/CommonButton/CommonButton';
 import CalcTable from '../CalcTable';
 import Box from '@mui/material/Box';
 import InputAdornment from '@mui/material/InputAdornment';
-import CalcAccordion from '../common/CalcAccordion';
+import CalcAccordion from '../CalcAccordion';
 import { cardHeaderStyles } from './styles';
 
 const CalcCard = () => {
